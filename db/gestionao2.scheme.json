@@ -1,0 +1,1282 @@
+{
+    "db": "gestionao2",
+    "tables": [
+        "acteur",
+        "ao_tokens",
+        "appelsoffres",
+        "clients",
+        "communes",
+        "consultations",
+        "contacts",
+        "curvitae",
+        "departement",
+        "departements",
+        "dico",
+        "docs",
+        "domaine",
+        "domaines",
+        "donneursordres",
+        "emailsnotification",
+        "etudes",
+        "favoris",
+        "favorites",
+        "feeds",
+        "fichiers",
+        "keywords",
+        "mails",
+        "mobile",
+        "my_communes_fields",
+        "profils",
+        "sources",
+        "thematiques",
+        "tokens",
+        "typesprofils",
+        "unites"
+    ],
+    "table": {
+        "acteur": {
+            "index": "ID_profil",
+            "fields": [
+                "ID_profil",
+                "ID_agent"
+            ],
+            "field": {
+                "ID_profil": {
+                    "required": true,
+                    "type": "int"
+                },
+                "ID_agent": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "ao_tokens": {
+            "index": "id",
+            "fields": [
+                "id",
+                "ao",
+                "keyword",
+                "total"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "ao": {
+                    "required": false,
+                    "type": "int"
+                },
+                "keyword": {
+                    "required": false,
+                    "type": "string"
+                },
+                "total": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "appelsoffres": {
+            "index": "IdAppelOffre",
+            "fields": [
+                "IdAppelOffre",
+                "IdSource",
+                "NumSource",
+                "NumAnnonce",
+                "DateParution",
+                "IdConsultation",
+                "Objet",
+                "Client",
+                "Observation",
+                "IdDepartement",
+                "DateLimite",
+                "IdThematique",
+                "_BLOB",
+                "DateTransmission",
+                "Semaine",
+                "IdSuiteDonnee",
+                "Motif",
+                "Montant",
+                "IdNaturePrestation",
+                "CoefBareme",
+                "RefAffaire",
+                "IdResultat",
+                "Commentaire",
+                "MailOK",
+                "IdUnite",
+                "IdDomaine",
+                "IdDonneurOrdre",
+                "Communes",
+                "Keywords",
+                "Liked"
+            ],
+            "field": {
+                "IdAppelOffre": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "IdSource": {
+                    "required": false,
+                    "type": "int"
+                },
+                "NumSource": {
+                    "required": false,
+                    "type": "string"
+                },
+                "NumAnnonce": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DateParution": {
+                    "required": false,
+                    "type": "date"
+                },
+                "IdConsultation": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Objet": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Client": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Observation": {
+                    "required": false,
+                    "type": "string"
+                },
+                "IdDepartement": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DateLimite": {
+                    "required": false,
+                    "type": "date"
+                },
+                "IdThematique": {
+                    "required": false,
+                    "type": "int"
+                },
+                "_BLOB": {
+                    "required": false,
+                    "type": "text"
+                },
+                "DateTransmission": {
+                    "required": false,
+                    "type": "date"
+                },
+                "Semaine": {
+                    "required": false,
+                    "type": "string"
+                },
+                "IdSuiteDonnee": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Motif": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Montant": {
+                    "required": false
+                },
+                "IdNaturePrestation": {
+                    "required": false,
+                    "type": "int"
+                },
+                "CoefBareme": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RefAffaire": {
+                    "required": false,
+                    "type": "string"
+                },
+                "IdResultat": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Commentaire": {
+                    "required": false,
+                    "type": "text"
+                },
+                "MailOK": {
+                    "required": false,
+                    "type": "int"
+                },
+                "IdUnite": {
+                    "required": false,
+                    "type": "int"
+                },
+                "IdDomaine": {
+                    "required": false,
+                    "type": "int"
+                },
+                "IdDonneurOrdre": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Communes": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Keywords": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Liked": {
+                    "required": false,
+                    "type": "int",
+                    "default": "0"
+                }
+            }
+        },
+        "clients": {
+            "index": "id",
+            "fields": [
+                "id",
+                "NOM"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "NOM": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "communes": {
+            "index": "ville_id",
+            "fields": [
+                "ville_id",
+                "ville_departement",
+                "ville_slug",
+                "ville_nom",
+                "ville_nom_simple",
+                "ville_nom_reel",
+                "ville_nom_soundex",
+                "ville_nom_metaphone",
+                "ville_code_postal",
+                "ville_commune",
+                "ville_code_commune",
+                "ville_arrondissement",
+                "ville_canton",
+                "ville_amdi",
+                "ville_population_2010",
+                "ville_population_1999",
+                "ville_population_2012",
+                "ville_densite_2010",
+                "ville_surface",
+                "ville_longitude_deg",
+                "ville_latitude_deg",
+                "ville_longitude_grd",
+                "ville_latitude_grd",
+                "ville_longitude_dms",
+                "ville_latitude_dms",
+                "ville_zmin",
+                "ville_zmax"
+            ],
+            "field": {
+                "ville_id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "ville_departement": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_slug": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_simple": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_reel": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_soundex": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_metaphone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_code_postal": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_commune": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_code_commune": {
+                    "required": true,
+                    "type": "string"
+                },
+                "ville_arrondissement": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_canton": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_amdi": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_population_2010": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_population_1999": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_population_2012": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_densite_2010": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_surface": {
+                    "required": false
+                },
+                "ville_longitude_deg": {
+                    "required": false
+                },
+                "ville_latitude_deg": {
+                    "required": false
+                },
+                "ville_longitude_grd": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_latitude_grd": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_longitude_dms": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_latitude_dms": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_zmin": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_zmax": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "consultations": {
+            "index": "IdConsultation",
+            "fields": [
+                "IdConsultation",
+                "LibCourtConsultation",
+                "LibLongConsultation"
+            ],
+            "field": {
+                "IdConsultation": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibCourtConsultation": {
+                    "required": true,
+                    "type": "string"
+                },
+                "LibLongConsultation": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "contacts": {
+            "index": "Rang",
+            "fields": [
+                "Rang",
+                "Kage",
+                "Role"
+            ],
+            "field": {
+                "Rang": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "Role": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "curvitae": {
+            "index": "IdCurVitae",
+            "fields": [
+                "IdCurVitae",
+                "Kage",
+                "Fichier",
+                "IdUnite"
+            ],
+            "field": {
+                "IdCurVitae": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "Fichier": {
+                    "required": true,
+                    "type": "string"
+                },
+                "IdUnite": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                }
+            }
+        },
+        "departement": {
+            "index": "departement_id",
+            "fields": [
+                "departement_id",
+                "departement_code",
+                "departement_nom",
+                "departement_nom_uppercase",
+                "departement_slug",
+                "departement_nom_soundex"
+            ],
+            "field": {
+                "departement_id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "departement_code": {
+                    "required": false,
+                    "type": "string"
+                },
+                "departement_nom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "departement_nom_uppercase": {
+                    "required": false,
+                    "type": "string"
+                },
+                "departement_slug": {
+                    "required": false,
+                    "type": "string"
+                },
+                "departement_nom_soundex": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "departements": {
+            "index": "IdDepartement",
+            "fields": [
+                "IdDepartement",
+                "NumDepartement",
+                "LibelleDepartement"
+            ],
+            "field": {
+                "IdDepartement": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "NumDepartement": {
+                    "required": true,
+                    "type": "string"
+                },
+                "LibelleDepartement": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "dico": {
+            "index": "id",
+            "fields": [
+                "id",
+                "ortho",
+                "phon",
+                "lemme",
+                "cgram",
+                "genre",
+                "nombre",
+                "freqlemfilms2",
+                "freqlemlivres",
+                "freqfilms2",
+                "freqlivres",
+                "infover",
+                "nbhomogr",
+                "nbhomoph",
+                "islem",
+                "nblettres",
+                "nbphons",
+                "cvcv",
+                "p",
+                "voisorth",
+                "voisphon",
+                "puorth",
+                "puphon",
+                "syll",
+                "nbsyll",
+                "cv-cv",
+                "orthrenv",
+                "phonrenv",
+                "orthosyll",
+                "cgramortho",
+                "deflem",
+                "defobs",
+                "old20",
+                "pld20",
+                "morphoder",
+                "nbmorph"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "ortho": {
+                    "required": false,
+                    "type": "string"
+                },
+                "phon": {
+                    "required": false,
+                    "type": "string"
+                },
+                "lemme": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cgram": {
+                    "required": false,
+                    "type": "string"
+                },
+                "genre": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nombre": {
+                    "required": false,
+                    "type": "string"
+                },
+                "freqlemfilms2": {
+                    "required": false,
+                    "type": "string"
+                },
+                "freqlemlivres": {
+                    "required": false,
+                    "type": "string"
+                },
+                "freqfilms2": {
+                    "required": false,
+                    "type": "string"
+                },
+                "freqlivres": {
+                    "required": false,
+                    "type": "string"
+                },
+                "infover": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nbhomogr": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nbhomoph": {
+                    "required": false,
+                    "type": "string"
+                },
+                "islem": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nblettres": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nbphons": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cvcv": {
+                    "required": false,
+                    "type": "string"
+                },
+                "p": {
+                    "required": false,
+                    "type": "string"
+                },
+                "voisorth": {
+                    "required": false,
+                    "type": "string"
+                },
+                "voisphon": {
+                    "required": false,
+                    "type": "string"
+                },
+                "puorth": {
+                    "required": false,
+                    "type": "string"
+                },
+                "puphon": {
+                    "required": false,
+                    "type": "string"
+                },
+                "syll": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nbsyll": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cv-cv": {
+                    "required": false,
+                    "type": "string"
+                },
+                "orthrenv": {
+                    "required": false,
+                    "type": "string"
+                },
+                "phonrenv": {
+                    "required": false,
+                    "type": "string"
+                },
+                "orthosyll": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cgramortho": {
+                    "required": false,
+                    "type": "string"
+                },
+                "deflem": {
+                    "required": false,
+                    "type": "string"
+                },
+                "defobs": {
+                    "required": false,
+                    "type": "string"
+                },
+                "old20": {
+                    "required": false,
+                    "type": "string"
+                },
+                "pld20": {
+                    "required": false,
+                    "type": "string"
+                },
+                "morphoder": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nbmorph": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "docs": {
+            "index": "docId",
+            "fields": [
+                "docId",
+                "_blob",
+                "filename",
+                "type",
+                "size"
+            ],
+            "field": {
+                "docId": {
+                    "required": true,
+                    "type": "string",
+                    "default": "NO"
+                },
+                "_blob": {
+                    "required": false,
+                    "type": "text"
+                },
+                "filename": {
+                    "required": false,
+                    "type": "string"
+                },
+                "type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "size": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "domaine": {
+            "index": "id_domaine",
+            "fields": [
+                "id_domaine",
+                "nom_domaine"
+            ],
+            "field": {
+                "id_domaine": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "nom_domaine": {
+                    "required": true,
+                    "type": "string",
+                    "default": "0"
+                }
+            }
+        },
+        "domaines": {
+            "index": "IdDomaine",
+            "fields": [
+                "IdDomaine",
+                "LibCourtDomaine",
+                "LibLongDomaine",
+                "MailDomaine"
+            ],
+            "field": {
+                "IdDomaine": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibCourtDomaine": {
+                    "required": true,
+                    "type": "string"
+                },
+                "LibLongDomaine": {
+                    "required": true,
+                    "type": "string"
+                },
+                "MailDomaine": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "donneursordres": {
+            "index": "IdDonneurOrdre",
+            "fields": [
+                "IdDonneurOrdre",
+                "LibelleDonneurOrdre"
+            ],
+            "field": {
+                "IdDonneurOrdre": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibelleDonneurOrdre": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "emailsnotification": {
+            "index": "IdAppelOffre",
+            "fields": [
+                "IdAppelOffre",
+                "IdDestinataire",
+                "typeDestinataire"
+            ],
+            "field": {
+                "IdAppelOffre": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "IdDestinataire": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "typeDestinataire": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "etudes": {
+            "index": "id",
+            "fields": [
+                "id",
+                "libelle",
+                "description",
+                "createdAt",
+                "updatedAt"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "libelle": {
+                    "required": false,
+                    "type": "string"
+                },
+                "description": {
+                    "required": false,
+                    "type": "string"
+                },
+                "createdAt": {
+                    "required": true,
+                    "type": "datetime"
+                },
+                "updatedAt": {
+                    "required": true,
+                    "type": "datetime"
+                }
+            }
+        },
+        "favoris": {
+            "index": "UId",
+            "fields": [
+                "UId",
+                "Favoris",
+                "Seen",
+                "LastUpdate"
+            ],
+            "field": {
+                "UId": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Favoris": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Seen": {
+                    "required": false,
+                    "type": "text"
+                },
+                "LastUpdate": {
+                    "required": true,
+                    "type": "datetime"
+                }
+            }
+        },
+        "favorites": {
+            "index": "userid",
+            "fields": [
+                "userid",
+                "fav",
+                "LastUpdate"
+            ],
+            "field": {
+                "userid": {
+                    "required": true,
+                    "type": "int"
+                },
+                "fav": {
+                    "required": false,
+                    "type": "text"
+                },
+                "LastUpdate": {
+                    "required": false,
+                    "type": "datetime"
+                }
+            }
+        },
+        "feeds": {
+            "index": "id",
+            "fields": [
+                "id",
+                "title",
+                "rss",
+                "source"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "title": {
+                    "required": false,
+                    "type": "string"
+                },
+                "rss": {
+                    "required": false,
+                    "type": "string"
+                },
+                "source": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "fichiers": {
+            "index": "IdFichier",
+            "fields": [
+                "IdFichier",
+                "IdAO",
+                "FichierLien",
+                "TailleFichier"
+            ],
+            "field": {
+                "IdFichier": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "IdAO": {
+                    "required": false,
+                    "type": "int"
+                },
+                "FichierLien": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TailleFichier": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "keywords": {
+            "index": "id",
+            "fields": [
+                "id",
+                "keyword"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "keyword": {
+                    "required": false,
+                    "type": "string",
+                    "default": "0"
+                }
+            }
+        },
+        "mails": {
+            "index": "idao",
+            "fields": [
+                "idao",
+                "value"
+            ],
+            "field": {
+                "idao": {
+                    "required": true,
+                    "type": "int",
+                    "default": "-1"
+                },
+                "value": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "mobile": {
+            "index": "MobileId",
+            "fields": [
+                "MobileId",
+                "UId",
+                "Synchro"
+            ],
+            "field": {
+                "MobileId": {
+                    "required": true,
+                    "type": "string"
+                },
+                "UId": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Synchro": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "my_communes_fields": {
+            "index": "ville_id",
+            "fields": [
+                "ville_id",
+                "ville_departement",
+                "ville_slug",
+                "ville_nom",
+                "ville_nom_simple",
+                "ville_nom_reel",
+                "ville_nom_soundex",
+                "ville_nom_metaphone",
+                "ville_code_postal",
+                "ville_commune",
+                "ville_code_commune",
+                "ville_arrondissement",
+                "ville_canton",
+                "ville_amdi",
+                "ville_population_2010",
+                "ville_population_1999",
+                "ville_population_2012",
+                "ville_densite_2010",
+                "ville_surface",
+                "ville_longitude_deg",
+                "ville_latitude_deg",
+                "ville_longitude_grd",
+                "ville_latitude_grd",
+                "ville_longitude_dms",
+                "ville_latitude_dms",
+                "ville_zmin",
+                "ville_zmax"
+            ],
+            "field": {
+                "ville_id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "ville_departement": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_slug": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_simple": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_reel": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_soundex": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_nom_metaphone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_code_postal": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_commune": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_code_commune": {
+                    "required": true,
+                    "type": "string"
+                },
+                "ville_arrondissement": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_canton": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_amdi": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_population_2010": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_population_1999": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_population_2012": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_densite_2010": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_surface": {
+                    "required": false
+                },
+                "ville_longitude_deg": {
+                    "required": false
+                },
+                "ville_latitude_deg": {
+                    "required": false
+                },
+                "ville_longitude_grd": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_latitude_grd": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_longitude_dms": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_latitude_dms": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ville_zmin": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ville_zmax": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "profils": {
+            "index": "IdProfil",
+            "fields": [
+                "IdProfil",
+                "IdTypeProfil",
+                "PassportUID"
+            ],
+            "field": {
+                "IdProfil": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "IdTypeProfil": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "PassportUID": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "sources": {
+            "index": "IdSource",
+            "fields": [
+                "IdSource",
+                "NomSource"
+            ],
+            "field": {
+                "IdSource": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "NomSource": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "thematiques": {
+            "index": "id_thematique",
+            "fields": [
+                "id_thematique",
+                "id_domaine",
+                "nom_thematique"
+            ],
+            "field": {
+                "id_thematique": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "id_domaine": {
+                    "required": true,
+                    "type": "int",
+                    "default": "0"
+                },
+                "nom_thematique": {
+                    "required": true,
+                    "type": "string",
+                    "default": "0"
+                }
+            }
+        },
+        "tokens": {
+            "index": "id",
+            "fields": [
+                "id"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                }
+            }
+        },
+        "typesprofils": {
+            "index": "IdTypeProfil",
+            "fields": [
+                "IdTypeProfil",
+                "LibelleTypeProfil"
+            ],
+            "field": {
+                "IdTypeProfil": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibelleTypeProfil": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "unites": {
+            "index": "IdUnite",
+            "fields": [
+                "IdUnite",
+                "MailUnite",
+                "Url"
+            ],
+            "field": {
+                "IdUnite": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "MailUnite": {
+                    "required": true,
+                    "type": "string"
+                },
+                "Url": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

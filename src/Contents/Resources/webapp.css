@@ -1,0 +1,186 @@
+.BackgroundSystem {
+    background-image: url(webapp/defaultdesktop.png);
+}
+
+.qxAboutLogo {
+    background-image: url(startup/logo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 128px 128px;
+    width: 128px;
+    height: 128px;
+}
+
+.qxIcon {
+    background-image: url(webapp/ico.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.mnu_preferences {
+    background-image: url(webapp/Preferences.png);
+}
+
+.add {
+    background-image: url(webapp/add.png);
+}
+
+.favori {
+    background-image: url(webapp/favori.png);
+}
+
+.mobile {
+    background-image: url(webapp/mobile.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.xls {
+    background-image: url(webapp/xls.png);
+}
+
+.appel-offre {
+    background-image: url(webapp/appel-offres.png);
+}
+
+.white {
+    background-color: white
+}
+
+/********************************************************************************************\
+											VMobile
+\********************************************************************************************/
+
+.screen-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+
+.title-mobile {
+    color: #F07D00;
+    font-size: 1.4em;
+    margin: 15px;
+}
+
+.description-mobile {
+    font-size: 1.2em;
+    color: #157efb;
+}
+
+.title-step {
+    margin: 15px;
+}
+
+.googleplay {
+    vertical-align: top;
+    display: inline-block;
+    height: 50px;
+    width: 150px;
+    background: url(webapp/googleplay.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+.appstore {
+    margin: 3px;
+    vertical-align: top;
+    display: none;
+    height: 45px;
+    width: 150px;
+    background: url(webapp/appstore.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+.text-mobile {
+    margin: 15px;
+    font-weight: 500;
+    font-size: 1.0em;
+}
+
+.Search {
+    background-image: url(webapp/loupe.png);
+    background-size: 128px 128px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.grey {
+    background-color: "#EEEEEE"
+}
+
+.heart {
+    background-image: url(webapp/heart.png)
+}
+
+.ico_user {
+    background-image: url(webapp/user.png);
+    width: 16px;
+    height: 16px;
+}
+
+.ico_group {
+    background-image: url(webapp/group.png);
+    width: 16px;
+    height: 16px;
+}
+
+.ico_delete {
+    background-image: url(webapp/delete.png);
+    width: 16px;
+    height: 16px;
+}
+
+.button_passport.letmein {
+    background-color: #EEEEEE;
+    color: black;
+    background-image: url(webapp/cerema.png);
+}
+
+.button_passport.letmein:hover {
+    background-color: white;
+}
+
+.fave {
+    width: 70px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(webapp/fave.png) no-repeat;
+    background-position: 0 0;
+}
+
+.fave.clickfave {
+    background-position: -3519px 0;
+    transition: background 1s steps(55);
+}
+
+.like {
+    background-image: url(webapp/like.png);
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+
+.like2 {
+    background-image: url(webapp/like-2.png);
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}

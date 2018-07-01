@@ -1,0 +1,18 @@
+{
+	"profiles": [
+		"DOC",
+		"GUEST"
+	],
+	"profile": {
+		"DOC": [
+
+			"magali.delorme",
+			"jacqueline.marro",
+			"patricia.picarello",
+			"nadine.tribout"
+		],
+		"GUEST": [
+			"pascal.vivier"
+		]
+	}
+}
