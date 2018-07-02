@@ -38,7 +38,11 @@ App.controller.define('CMain', {
         "VImport"
     ],
 
-    models: [],
+    models: [
+        "mDep",
+        "mClients",
+        "mSources"
+    ],
 
     init: function () {
 
@@ -80,6 +84,9 @@ App.controller.define('CMain', {
             },
             "TPrincipal button#b_excel": {
                 click: "export_excel"
+            },
+            "TPrincipal button#filtering": {
+                click: "filter_onclick"
             },
             "TFavoris grid#AO": {
                 itemdblclick: "grid_dblclick",
@@ -201,6 +208,17 @@ App.controller.define('CMain', {
 
         App.init('VMain', this.onLoad);
 
+    },
+    filter_onclick: function () {
+        App.get('TPrincipal FilterBox#FilterPanel').store = App.get('TPrincipal grid').getStore();
+        if (App.get('TPrincipal FilterBox#FilterPanel').isVisible()) {
+            App.get('TPrincipal grid').getStore().getProxy().extraParams.quest = null;
+            App.get('TPrincipal grid').getStore().load();
+            App.get('TPrincipal FilterBox#FilterPanel').hide();
+        } else {
+            App.get('TPrincipal grid').getStore().load();
+            App.get('TPrincipal FilterBox#FilterPanel').show();
+        }
     },
     showMobile: function () {
         App.view.create('VMobile', {
@@ -583,7 +601,19 @@ App.controller.define('CMain', {
                             });
                         });
                     }
-                } else App.$('.like2').show();
+                } else {
+                    App.$('.like2').show();
+                    if (Auth.User) {
+                        App.$('.like2').on('click', function () {
+                            App.$('.like2').hide();
+                            App.$('.like').show();
+                            App.DB.post('gestionao2://appelsoffres', {
+                                IdAppelOffre: record.data.IdAppelOffre,
+                                Liked: null
+                            });
+                        });
+                    }
+                }
             } else {
                 if (Auth.User) {
                     App.$('.like').show();
@@ -593,6 +623,14 @@ App.controller.define('CMain', {
                         App.DB.post('gestionao2://appelsoffres', {
                             IdAppelOffre: record.data.IdAppelOffre,
                             Liked: Auth.User.uid
+                        });
+                    });
+                    App.$('.like2').on('click', function () {
+                        App.$('.like2').hide();
+                        App.$('.like').show();
+                        App.DB.post('gestionao2://appelsoffres', {
+                            IdAppelOffre: record.data.IdAppelOffre,
+                            Liked: null
                         });
                     });
                 }

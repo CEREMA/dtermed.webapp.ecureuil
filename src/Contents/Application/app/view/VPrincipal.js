@@ -3,8 +3,45 @@ App.view.define('VPrincipal', {
     alias: "widget.TPrincipal",
     border: false,
     layout: "vbox",
-
     items: [{
+        xtype: "FilterBox",
+        itemId: "FilterPanel",
+        fields: [{
+                name: "Client",
+                field: "appelsoffres.Client",
+                type: "choice",
+                model: "mClients",
+                display: "NOM",
+                value: "NOM"
+            },
+            {
+                name: "Département",
+                field: "appelsoffres.IdDepartement",
+                type: "choice",
+                model: "mDep",
+                display: "departement_nom",
+                value: "departement_id"
+            },
+            {
+                name: "Date de parution",
+                field: "appelsoffres.DateParution",
+                type: "date"
+            },
+            {
+                name: "Date limite",
+                field: "appelsoffres.DateLimite",
+                type: "date"
+            },
+            {
+                name: "Source",
+                field: "appelsoffres.IdSource",
+                type: "choice",
+                model: "mSources",
+                display: "NomSource",
+                value: "IdSource"
+            }
+        ]
+    }, {
         xtype: "grid",
         itemId: "AO",
         width: "100%",
@@ -56,6 +93,13 @@ App.view.define('VPrincipal', {
                 iconAlign: "top",
                 iconCls: "xls",
                 hidden: true
+            }, {
+                xtype: "button",
+                itemId: "filtering",
+                scale: "large",
+                iconAlign: "top",
+                iconCls: "filter",
+                text: "Filtrer"
             }
         ],
         features: [{

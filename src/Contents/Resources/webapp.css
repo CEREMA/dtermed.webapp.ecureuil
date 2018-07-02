@@ -45,6 +45,11 @@
     background-image: url(webapp/xls.png);
 }
 
+.filter {
+    background-image: url(webapp/filter.png);
+    background-size: contain;
+}
+
 .appel-offre {
     background-image: url(webapp/appel-offres.png);
 }

@@ -1,0 +1,9 @@
+gestionao2
+SELECT DISTINCT
+	$_OBJECTS
+	FROM (
+        appelsoffres LEFT JOIN domaine 
+        ON (domaine.id_domaine = appelsoffres.IdDomaine)
+    )
+	$_WHERE
+ORDER BY DateParution DESC

@@ -11,6 +11,27 @@ AO = {
 	},
 	getAll: function (o, cb) {
 		if (!AO.auth) return cb('UNAUTHORIZED', null);
+		if (o.quest) {
+			var o = JSON.parse(o.quest);
+			var db = App.using('db');
+			var objs = [];
+			var where = [];
+			objs.push("appelsoffres.*");
+			objs.push("domaine.*");
+			console.log(o);
+			for (var i = 0; i < o.length; i++) {
+				var str = "";
+				if (i != 0) {
+					str = ' ' + o[i].operator + ' ';
+				};
+				str += o[i].name;
+				str += o[i].value;
+				where.push(str);
+			};
+			var sql = db.get('ao', objs, where);
+			console.log(sql);
+			return db.model('gestionao2', sql, cb);
+		};
 		AO.using('db').model('gestionao2', 'SELECT *,domaine.* FROM (appelsoffres LEFT JOIN domaine ON (domaine.id_domaine = appelsoffres.IdDomaine)) where YEAR(DateParution)>2017 order by DateParution desc', cb);
 	},
 	getProfil: function (cb) {
@@ -60,6 +81,15 @@ AO = {
 			});
 			else cb(r);
 		})
+	},
+	AllDeps: function (o, cb) {
+		AO.using('db').model('gestionao2', 'select * from departement order by departement_nom', cb);
+	},
+	AllClients: function (o, cb) {
+		AO.using('db').model('gestionao2', 'select * from clients order by NOM', cb);
+	},
+	AllSources: function (o, cb) {
+		AO.using('db').model('gestionao2', 'select * from sources order by NomSource', cb);
 	}
 };
 
